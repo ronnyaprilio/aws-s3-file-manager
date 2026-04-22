@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    const fileName = `${Date.now()}-${file.name}`;
+    const fileName = file.name;
 
     const command = new PutObjectCommand({
       Bucket: BUCKET_NAME,
